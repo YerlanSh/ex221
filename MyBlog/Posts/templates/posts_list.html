@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Все посты</h2>
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p>Дата публикации: {{ post.date_posted }}</p>
+            <p>Автор: {{ post.author.username }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
