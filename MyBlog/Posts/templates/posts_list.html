@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container mt-5">
+    <h1> </h1>
+    <form method="post" action="{% url 'newpost' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Добавить пост</button>
+    </form>
+    </div>
     <h2>Все посты</h2>
     {% for post in posts %}
         <div>

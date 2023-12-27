@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        <div class="container mt-5">
+            <h1>Новый пост</h1>
+            <form method="post" action="{% url 'newpost' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </form>
+        </div>
+        <a href="http://127.0.0.1:8000/">Возврат на главную страницу</a>
+    </body>
+{% endblock %}
